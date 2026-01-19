@@ -27,7 +27,14 @@ The system performs **real-time intrusion detection**, supports **multiple attac
 - Real-time packet analysis
 - Manual packet input & quick test generation
 - Feature alignment to avoid training-inference mismatch
-- Graceful fallback when database is unavailable
+- Graceful fallback when database is unavailable  
+  
+### AI-Powered  
+AI-Powered Decision Making  
+Machine Learning–Based Intrusion Detection  
+Automated Feature Engineering  
+Multi-Class Attack Classification  
+Confidence-Based Threat Scoring  
 
 ### 📊 UI / UX
 - Modern **Streamlit dashboard**
