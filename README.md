@@ -113,8 +113,7 @@ Grafana → http://localhost:3000
 ### 📌 Future Enhancements
 
 Live packet capture (pcap / scapy)  
-FastAPI REST endpoint  
-Grafana dashboards  
+FastAPI REST endpoint   
 Model retraining pipeline  
 Alerting system for critical threats
 
