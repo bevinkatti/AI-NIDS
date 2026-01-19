@@ -1,0 +1,52 @@
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    depends_on:
+      - db
+    volumes:
+      - ./models:/app/models
+      - ./logs:/app/logs
+    env_file:
+      - .env
+
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ai_nids
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+  
+  prometheus:
+    image: prom/prometheus
+    container_name: ai-nids-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - app
+
+  grafana:
+    image: grafana/grafana
+    container_name: ai-nids-grafana
+    ports:
+    - "3000:3000"
+    depends_on:
+    - prometheus
+    volumes:
+    - grafana_data:/var/lib/grafana
+
+volumes:
+  postgres_data:
+  grafana_data:

@@ -1,0 +1,166 @@
+/* =========================================================
+   GLOBAL RESET & FIXES
+   ========================================================= */
+
+* {
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+}
+
+html, body {
+    font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+/* =========================================================
+   STREAMLIT BASE OVERRIDES
+   ========================================================= */
+
+.stApp {
+    background: linear-gradient(180deg, #02050b 0%, #020617 100%);
+}
+
+.block-container {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+/* =========================================================
+   HEADINGS & TEXT
+   ========================================================= */
+
+h1, h2, h3, h4, h5 {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+p, label, span {
+    color: #cbd5f5;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   METRICS
+   ========================================================= */
+
+[data-testid="stMetric"] {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(1, 5, 11, 0.674);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.stButton > button {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.stButton > button:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.stButton > button:active {
+    transform: scale(0.98);
+}
+
+/* =========================================================
+   INPUTS & SELECTS
+   ========================================================= */
+
+input, textarea, select {
+    background-color: #020617 !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    border-radius: 8px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35) !important;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+section[data-testid="stSidebar"] {
+    background: #020617;
+    border-right: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] p {
+    color: #e5e7eb;
+}
+
+/* =========================================================
+   TABLES & DATAFRAMES
+   ========================================================= */
+
+.stDataFrame {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead tr th {
+    background-color: #020617 !important;
+    color: #93c5fd !important;
+}
+
+tbody tr td {
+    background-color: #020617 !important;
+    color: #e5e7eb !important;
+}
+
+/* =========================================================
+   EXPANDERS
+   ========================================================= */
+
+details {
+    background: rgba(2, 6, 23, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 0.5rem;
+}
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.stAlert {
+    border-radius: 10px;
+}
+
+/* =========================================================
+   RESPONSIVE FIXES
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
