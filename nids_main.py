@@ -277,3 +277,9 @@ with tabs[3]:
             file_name="detection_history.csv",
             mime="text/csv",
         )
+
+    if st.button("🗑 Clear Detection History"):
+            detection_repo.clear_all()
+            st.success("Detection history cleared")
+            st.rerun()
+

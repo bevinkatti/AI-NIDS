@@ -268,7 +268,14 @@ class DetectionRepository:
             ]
         finally:
             session.close()
-
+            
+    def clear_all(self):
+        if not self.db.enabled:
+            self._memory_store.clear()
+            return
+        with self.db.get_session() as session:
+            session.query(Detection).delete()
+            session.commit()
 
 class ModelVersionRepository:
     """
